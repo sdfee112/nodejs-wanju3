@@ -11,8 +11,6 @@ console.log(``);
 console.log("     /stas 查看进程");
 console.log("     /listen 查看端口");
 console.log("     /start 手动启动脚本");
-console.log("     /res 手动恢复");
-console.log("     /backup 手动备份");
 console.log(``);
 console.log(==============================);
 
