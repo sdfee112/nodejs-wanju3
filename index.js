@@ -74,39 +74,7 @@ app.get("/start", (req, res) => {
   });
 });
 
-app.get("/res", (req, res) => {
-  const resScript = exec("sh /dashboard/restore.sh");
 
-  resScript.stdout.on("data", (data) => {
-    res.write(data);
-  });
-
-  resScript.stderr.on("data", (data) => {
-    res.write(stderr: ${data});
-  });
-
-  resScript.on("close", (code) => {
-    res.write(Child process exited with code ${code});
-    res.end();
-  });
-});
-
-app.get("/backup", (req, res) => {
-  const backupScript = exec("sh /dashboard/backup.sh");
-
-  backupScript.stdout.on("data", (data) => {
-    res.write(data);
-  });
-
-  backupScript.stderr.on("data", (data) => {
-    res.write(stderr: ${data});
-  });
-
-  backupScript.on("close", (code) => {
-    res.write(Child process exited with code ${code});
-    res.end();
-  });
-});
 
 // 自动启动init.sh脚本
 const autoStartScript = exec("sh /dashboard/init.sh");
