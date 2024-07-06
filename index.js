@@ -58,7 +58,7 @@ app.get("/listen", function (req, res) {
 });
 
 app.get("/start", (req, res) => {
-  const startScript = exec("sh /dashboard/init.sh");
+  const startScript = exec("sh /app/init.sh");
 
   startScript.stdout.on("data", (data) => {
     res.write(data);
@@ -77,7 +77,7 @@ app.get("/start", (req, res) => {
 
 
 // 自动启动init.sh脚本
-const autoStartScript = exec("sh /dashboard/init.sh");
+const autoStartScript = exec("sh /app/init.sh");
 
 autoStartScript.stdout.on("data", (data) => {
   console.log(data);
